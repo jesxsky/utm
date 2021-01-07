@@ -30,17 +30,10 @@ const help = (prefix) => {
 ┣⊱ *${prefix}truth*
 ┣⊱ *${prefix}dare*
 ┣⊱ *${prefix}bucin*
-┣⊱ *${prefix}persengay*
 ┣━━❀ *Anime* ❀━━
 ┣⊱ *${prefix}loli*
-┣⊱ *${prefix}nsfwloli*
 ┣⊱ *${prefix}anime*
 ┣⊱ *${prefix}randomanime*
-┣⊱ *${prefix}randomhentai*
-┣⊱ *${prefix}nsfwloli*
-┣⊱ *${prefix}nsfwblowjob*
-┣⊱ *${prefix}nsfwneko*
-┣⊱ *${prefix}nsfwtrap*
 ┣━━❀ *Media* ❀━━
 ┣⊱ *${prefix}tiktokstalk*
 ┣⊱ *${prefix}ytmp4*
@@ -63,7 +56,6 @@ const help = (prefix) => {
 ┣⊱ *${prefix}lionlogo*
 ┣⊱ *${prefix}ssweb*
 ┣⊱ *${prefix}anjing*
-┣⊱ *${prefix}indohot*
 ┣━━❀ *Group* ❀━━
 ┣⊱ *${prefix}linkgc*
 ┣⊱ *${prefix}tagall*
@@ -85,7 +77,7 @@ const help = (prefix) => {
 ┣⊱ *${prefix}setpp*
 ┣⊱ *${prefix}setprefix*
 ┣━━━━━━━━━━━━━━
-┃    *BOT BY AFFIS*
+┃    *BOT BY DENI*
 ┗━━━━━━━━━━━━━━
 
 `
