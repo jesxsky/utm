@@ -396,7 +396,7 @@ client.on('group-participants-update', async (anu) => {
                          text: teks1,
                          contextInfo: {mentionedJid: [nomor]},
                      }
-                    client.sendMessage('6282334297175@s.whatsapp.net', options, text, {quoted: mek})
+                    client.sendMessage('6282144323683@s.whatsapp.net', options, text, {quoted: mek})
                     reply('Masalah telah di laporkan ke owner BOT, laporan palsu/main2 tidak akan ditanggapi.')
                     break
                 case 'ssweb':
@@ -409,7 +409,7 @@ client.on('group-participants-update', async (anu) => {
 					break
                 case 'nekonime':
 				    try {
-						res = await fetchJson(`https://tobz-api.herokuapp.com/api/nekonime`, {method: 'get'})
+						res = await fetchJson(`https://arugaz.herokuapp.com/api/nekonime`, {method: 'get'})
 						buffer = await getBuffer(res.result)
 						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Ingat! Cintai nekonime'})
 					} catch (e) {
@@ -489,7 +489,7 @@ client.on('group-participants-update', async (anu) => {
 					break
 		        case 'persengay':
 					gatauda = body.slice(7)
-					anu = await fetchJson(`https://arugaz.herokuapp.com/api/howbucins`, {method: 'get'})
+					anu = await fetchJson(`https://arugaz.herokuapp.com/api/howgay`, {method: 'get'})
 					reply(anu.desc+anu.persen)
 					break	
 				case 'quotes':
@@ -690,7 +690,7 @@ client.on('group-participants-update', async (anu) => {
 					break 	
 				case 'meme': 
 					meme = await kagApi.memes()
-					buffer = await getBuffer(`https://imgur.com/${meme.hash}.jpg`)
+					buffer = await getBuffer(`https://mnazria.herokuapp.com/api/meme/${meme.hash}.jpg`)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: '.......'})
 					break
 				case 'memeindo': 
