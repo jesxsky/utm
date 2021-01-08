@@ -1,5 +1,6 @@
-const help = (prefix) => {
-	return `
+
+const help = (prefix) => { 
+	return `                 
 ┏━━❉ *About Bot* ❉━━┓
 ┣⊱ *${prefix}owner*
 ┣⊱ *${prefix}donasi*
@@ -29,17 +30,11 @@ const help = (prefix) => {
 ┣⊱ *${prefix}truth*
 ┣⊱ *${prefix}dare*
 ┣⊱ *${prefix}bucin*
-┣⊱ *${prefix}persengay*
 ┣━━❀ *Anime* ❀━━
 ┣⊱ *${prefix}loli*
-┣⊱ *${prefix}nsfwloli*
 ┣⊱ *${prefix}anime*
 ┣⊱ *${prefix}randomanime*
-┣⊱ *${prefix}randomhentai*
-┣⊱ *${prefix}nsfwloli*
-┣⊱ *${prefix}nsfwblowjob*
-┣⊱ *${prefix}nsfwneko*
-┣⊱ *${prefix}nsfwtrap*
+┣⊱ *${prefix}nekonime*
 ┣━━❀ *Media* ❀━━
 ┣⊱ *${prefix}tiktokstalk*
 ┣⊱ *${prefix}ytmp4*
@@ -61,8 +56,9 @@ const help = (prefix) => {
 ┣⊱ *${prefix}wolflogo*
 ┣⊱ *${prefix}lionlogo*
 ┣⊱ *${prefix}ssweb*
+┣━━❀ *Foto Hewan* ❀━━
 ┣⊱ *${prefix}anjing*
-┣⊱ *${prefix}indohot*
+┣⊱ *${prefix}kucing*
 ┣━━❀ *Group* ❀━━
 ┣⊱ *${prefix}linkgc*
 ┣⊱ *${prefix}tagall*
@@ -84,11 +80,13 @@ const help = (prefix) => {
 ┣⊱ *${prefix}setpp*
 ┣⊱ *${prefix}setprefix*
 ┣━━━━━━━━━━━━━━
-┃    *BOT BY AFFIS*
+┃    *BOT BY DENI*
 ┗━━━━━━━━━━━━━━
 
 `
 }
-
 exports.help = help
 
+
+
+  
