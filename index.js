@@ -719,11 +719,13 @@ client.on('group-participants-update', async (anu) => {
 					client.sendMessage(from, pok, image, { quoted: mek })
 					break
 				case 'memeindo': 
-					memein = await kagApi.memeindo()
-					buffer = await getBuffer(`https://imgur.com/${memein.hash}.jpg`)
-					client.sendMessage(from, buffer, image, {quoted: mek, caption: '.......'})
+					anu = await fetchJson(`https://st4rz.herokuapp.com/api/1cak`, {method: 'get'})
+					reply(mess.wait)
+					var n = JSON.parse(JSON.stringify(anu));
+					var nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek })
 					break
-				
 				case 'nsfwloli': 
 				    try {
 						if (!isNsfw) return reply('Maaf fitur ini belum di aktifkan/kesalahan server bot')
