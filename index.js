@@ -418,25 +418,20 @@ client.on('group-participants-update', async (anu) => {
 					}
 					break
                 case 'randomanime':
-				    try {
-						res = await fetchJson(`https://arugaz.herokuapp.com/api/waifu`, {method: 'get'})
-						buffer = await getBuffer(res.result)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'ni randomanime!'})
-					} catch (e) {
-						console.log(`Error :`, color(e,'red'))
-						reply('❌ *ERROR* ❌')
-					}
+				     anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=randomanime`, {method: 'get'})
+					reply(mess.wait)
+					var n = JSON.parse(JSON.stringify(anu));
+					var nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek,caption: 'Jangan jadiin bahan buat comli om' })
 					break
 			    case 'randomhentai':
-				    try {
-						if (!isNsfw) return reply('Nsfw tidak di aktifkan')
-						res = await fetchJson(`https://mhankbarbar.herokuapp.com/api/xnxx`, {method: 'get'})
-						buffer = await getBuffer(res.result)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'hentai teros'})
-					} catch (e) {
-						console.log(`Error :`, color(e,'red'))
-						reply('❌ *ERROR* ❌')
-					}
+				  anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=ecchi`, {method: 'get'})
+					reply(mess.wait)
+					var n = JSON.parse(JSON.stringify(anu));
+					var nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek,caption: 'Jangan jadiin bahan buat comli om' })
 					break
                 case 'nsfwloli':
 				    try {
@@ -547,7 +542,7 @@ client.on('group-participants-update', async (anu) => {
 					pok = await getBuffer(nimek)
 					client.sendMessage(from, pok, image, { quoted: mek })
 					break
-		case 'lol':
+		case 'loli':
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=loli`, {method: 'get'})
 					reply(mess.wait)
 					var n = JSON.parse(JSON.stringify(anu));
@@ -726,16 +721,6 @@ client.on('group-participants-update', async (anu) => {
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: '.......'})
 					break
 				
-			case 'loli': 
-				    try {
-						res = await fetchJson(`https://arugaz.herokuapp.com/api/randomloli`, {method: 'get'})
-						buffer = await getBuffer(res.url)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Ingat! Citai Lolimu'})
-					} catch (e) {
-						console.log(`Error :`, color(e,'red'))
-						reply('❌ *ERROR* ❌')
-					}
-					break
 				case 'nsfwloli': 
 				    try {
 						if (!isNsfw) return reply('Maaf fitur ini belum di aktifkan/kesalahan server bot')
