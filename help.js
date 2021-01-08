@@ -56,7 +56,9 @@ const help = (prefix) => {
 ┣⊱ *${prefix}wolflogo*
 ┣⊱ *${prefix}lionlogo*
 ┣⊱ *${prefix}ssweb*
+┣━━❀ *Foto Hewan* ❀━━
 ┣⊱ *${prefix}anjing*
+┣⊱ *${prefix}kucing*
 ┣━━❀ *Group* ❀━━
 ┣⊱ *${prefix}linkgc*
 ┣⊱ *${prefix}tagall*
