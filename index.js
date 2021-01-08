@@ -630,26 +630,10 @@ client.on('group-participants-update', async (anu) => {
             if (!quotedMsgObj.fromMe) return client.reply(from, 'Salah!!, Bot tidak bisa mengahpus chat user lain!', id)
             client.deleteMessage(quotedMsgObj.chatId, quotedMsgObj.id, false)
             break
-        case '!getses':
-            const sesPic = await client.getSnapshot()
-            client.sendFile(from, sesPic, 'session.png', 'Neh...', id)
-            break
+        
 	case '!listdaerah':
             const listDaerah = await get('https://mhankbarbar.herokuapp.com/daerah').json()
             client.reply(from, listDaerah.result, id)
-            break
-	case '!jadwalshalat':
-            if (args.length === 1) return client.reply(from, '[❗] Kirim perintah *!jadwalShalat [daerah]*\ncontoh : *!jadwalShalat Tangerang*\nUntuk list daerah kirim perintah *!listDaerah*')
-            const daerah = body.slice(14)
-            const jadwalShalat = await get.get(`https://mhankbarbars.herokuapp.com/api/jadwalshalat?daerah=${daerah}&apiKey=${apiKey}`).json()
-            if (jadwalShalat.error) return client.reply(from, jadwalShalat.error, id)
-            const { Imsyak, Subuh, Dhuha, Dzuhur, Ashar, Maghrib, Isya } = await jadwalShalat
-            arrbulan = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
-            tgl = new Date().getDate()
-            bln = new Date().getMonth()
-            thn = new Date().getFullYear()
-            const resultJadwal = `Jadwal shalat di ${daerah}, ${tgl}-${arrbulan[bln]}-${thn}\n\nImsyak : ${Imsyak}\nSubuh : ${Subuh}\nDhuha : ${Dhuha}\nDzuhur : ${Dzuhur}\nAshar : ${Ashar}\nMaghrib : ${Maghrib}\nIsya : ${Isya}`
-            client.reply(from, resultJadwal, id)
             break
 	case '!neko':
             q2 = Math.floor(Math.random() * 900) + 300;
