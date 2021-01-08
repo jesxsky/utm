@@ -238,7 +238,7 @@ client.on('group-participants-update', async (anu) => {
           case 'ping':
             await client.sendMessage(from, `Ping!!!!\nSpeed: ${processTime(t, moment())} _Second_`)
             break
-				
+				case 'm':
 				case 'menu':
 					client.sendMessage(from, help(prefix), text)
 					break
@@ -419,7 +419,7 @@ client.on('group-participants-update', async (anu) => {
 					break
                 case 'randomanime':
 				    try {
-						res = await fetchJson(`https://tobz-api.herokuapp.com/api/randomanime`, {method: 'get'})
+						res = await fetchJson(`https://arugaz.herokuapp.com/api/waifu`, {method: 'get'})
 						buffer = await getBuffer(res.result)
 						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'ni randomanime!'})
 					} catch (e) {
@@ -539,6 +539,15 @@ client.on('group-participants-update', async (anu) => {
 					pok = await getBuffer(nimek)
 					client.sendMessage(from, pok, image, { quoted: mek })
 					break
+		case 'buatkamu':
+					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=cinta`, {method: 'get'})
+					reply(mess.wait)
+					var n = JSON.parse(JSON.stringify(anu));
+					var nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek })
+					break
+		
                 case 'indohot':
                 if (!isNsfw) return reply('nsfw gak aktif')
                    anu = await fetchJson(`https://arugaz.herokuapp.com/api/indohot`, {method: 'get'})
@@ -709,7 +718,7 @@ client.on('group-participants-update', async (anu) => {
 				
 			case 'loli': 
 				    try {
-						res = await fetchJson(`https://api.lolis.life/random`, {method: 'get'})
+						res = await fetchJson(`https://arugaz.herokuapp.com/api/randomloli`, {method: 'get'})
 						buffer = await getBuffer(res.url)
 						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Ingat! Citai Lolimu'})
 					} catch (e) {
