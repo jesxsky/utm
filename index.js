@@ -441,7 +441,7 @@ client.on('group-participants-update', async (anu) => {
                 case 'nsfwloli':
 				    try {
 						if (!isNsfw) return reply('Nsfw tidak di aktifkan')
-						res = await fetchJson(`https://api.lolis.life/random?nsfw=true`, {method: 'get'})
+						res = await fetchJson(`https://api.fdci.se/rep.php?gambar=loli`, {method: 'get'})
 						buffer = await getBuffer(res.url)
 						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Jangan jadiin bahan buat comli om'})
 					} catch (e) {
