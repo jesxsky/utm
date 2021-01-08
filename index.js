@@ -423,15 +423,15 @@ client.on('group-participants-update', async (anu) => {
 					var n = JSON.parse(JSON.stringify(anu));
 					var nimek =  n[Math.floor(Math.random() * n.length)];
 					pok = await getBuffer(nimek)
-					client.sendMessage(from, pok, image, { quoted: mek,caption: 'Jangan jadiin bahan buat comli om' })
+					client.sendMessage(from, pok, image, { quoted: mek,caption: 'ni anjim' })
 					break
-			    case 'ecchi':
-				  anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=ecchi`, {method: 'get'})
+			    case 'wh':
+				  anu = await fetchJson(`https://arugaz.herokuapp.com/api/waifu`, {method: 'get'})
 					reply(mess.wait)
 					var n = JSON.parse(JSON.stringify(anu));
 					var nimek =  n[Math.floor(Math.random() * n.length)];
 					pok = await getBuffer(nimek)
-					client.sendMessage(from, pok, image, { quoted: mek,caption: 'Jangan jadiin bahan buat comli om' })
+					client.sendMessage(from, pok, image, { quoted: mek,caption: 'Cih' })
 					break
                 case 'nsfwloli':
 				    try {
@@ -524,7 +524,7 @@ client.on('group-participants-update', async (anu) => {
 					var n = JSON.parse(JSON.stringify(anu));
 					var nimek =  n[Math.floor(Math.random() * n.length)];
 					pok = await getBuffer(nimek)
-					client.sendMessage(from, pok, image, { quoted: mek })
+					client.sendMessage(from, pok, image, { quoted: mek, caption: 'Mirip MANTAN' })
 					break
 		case 'kucing':
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=kucing`, {method: 'get'})
@@ -548,7 +548,7 @@ client.on('group-participants-update', async (anu) => {
 					var n = JSON.parse(JSON.stringify(anu));
 					var nimek =  n[Math.floor(Math.random() * n.length)];
 					pok = await getBuffer(nimek)
-					client.sendMessage(from, pok, image, { quoted: mek })
+					client.sendMessage(from, pok, image, { quoted: mek,caption: 'FBI OPEN UP!!' })
 					break
 					
 		
@@ -711,9 +711,12 @@ client.on('group-participants-update', async (anu) => {
 					reply(`𝗣𝗿𝗲𝗳𝗶𝘅 𝗯𝗲𝗿𝗵𝗮𝘀𝗶𝗹 𝗱𝗶 𝘂𝗯𝗮𝗵 𝗺𝗲𝗻𝗷𝗮𝗱𝗶 : ${prefix}`)
 					break 	
 				case 'meme': 
-					meme = await kagApi.memes()
-					buffer = await getBuffer(`https://mnazria.herokuapp.com/api/meme/${meme.hash}.jpg`)
-					client.sendMessage(from, buffer, image, {quoted: mek, caption: '.......'})
+					anu = await fetchJson(`https://mnazria.herokuapp.com/api/meme-search?genre=memes`, {method: 'get'})
+					reply(mess.wait)
+					var n = JSON.parse(JSON.stringify(anu));
+					var nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek })
 					break
 				case 'memeindo': 
 					memein = await kagApi.memeindo()
