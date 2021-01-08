@@ -547,6 +547,15 @@ client.on('group-participants-update', async (anu) => {
 					pok = await getBuffer(nimek)
 					client.sendMessage(from, pok, image, { quoted: mek })
 					break
+		case 'lol':
+					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=loli`, {method: 'get'})
+					reply(mess.wait)
+					var n = JSON.parse(JSON.stringify(anu));
+					var nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek })
+					break
+					
 		
                 case 'indohot':
                 if (!isNsfw) return reply('nsfw gak aktif')
@@ -585,6 +594,7 @@ client.on('group-participants-update', async (anu) => {
                     reply(anu.result)
 			        break
 			    case 'map':
+			    case 'peta':
                 anu = await fetchJson(`https://mnazria.herokuapp.com/api/maps?search=${body.slice(5)}`, {method: 'get'})
                 buffer = await getBuffer(anu.gambar)
                 client.sendMessage(from, buffer, image, {quoted: mek, caption: `${body.slice(5)}`})
@@ -729,7 +739,7 @@ client.on('group-participants-update', async (anu) => {
 				case 'nsfwloli': 
 				    try {
 						if (!isNsfw) return reply('Maaf fitur ini belum di aktifkan/kesalahan server bot')
-						res = await fetchJson(`https://api.lolis.life/random?nsfw=true`, {method: 'get'})
+						res = await fetchJson(`https://api.fdci.se/rep.php?gambar=loli?nsfw=true`, {method: 'get'})
 						buffer = await getBuffer(res.url)
 						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Jangan jadiin bahan buat comli om'})
 					} catch (e) {
