@@ -711,20 +711,14 @@ client.on('group-participants-update', async (anu) => {
 					reply(`𝗣𝗿𝗲𝗳𝗶𝘅 𝗯𝗲𝗿𝗵𝗮𝘀𝗶𝗹 𝗱𝗶 𝘂𝗯𝗮𝗵 𝗺𝗲𝗻𝗷𝗮𝗱𝗶 : ${prefix}`)
 					break 	
 				case 'meme': 
-					anu = await fetchJson(`https://mnazria.herokuapp.com/api/meme-search?genre=memes`, {method: 'get'})
-					reply(mess.wait)
-					var n = JSON.parse(JSON.stringify(anu));
-					var nimek =  n[Math.floor(Math.random() * n.length)];
-					pok = await getBuffer(nimek)
-					client.sendMessage(from, pok, image, { quoted: mek })
+					meme = await kagApi.memes()
+					buffer = await getBuffer(`https://imgur.com/${meme.hash}.jpg`)
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: '.......'})
 					break
 				case 'memeindo': 
-					anu = await fetchJson(`https://st4rz.herokuapp.com/api/1cak`, {method: 'get'})
-					reply(mess.wait)
-					var n = JSON.parse(JSON.stringify(anu));
-					var nimek =  n[Math.floor(Math.random() * n.length)];
-					pok = await getBuffer(nimek)
-					client.sendMessage(from, pok, image, { quoted: mek })
+					memein = await kagApi.memeindo()
+					buffer = await getBuffer(`https://imgur.com/${memein.hash}.jpg`)
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: '.......'})
 					break
 				case 'nsfwloli': 
 				    try {
@@ -772,18 +766,17 @@ client.on('group-participants-update', async (anu) => {
                  reply (linkgc)
                  break 
 				case 'tagall':
-					if (!isGroup) return reply(mess.only.group)
-					if (!isGroupAdmins) return reply(mess.only.admin)
-					members_id = []
-					teks = (args.length > 1) ? body.slice(8).trim() : ''
-					teks += '\n\n'
-					for (let mem of groupMembers) {
-						rchoice = Math.floor(Math.random() * list_emoji.length)
-						teks += `┣➥ @${mem.jid.split('@')[0]}\n`
-						members_id.push(mem.jid)
-					}
-					mentions(teks, members_id, true)
-					break
+					if (!isGroupMsg) return client.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
+            			if (!isGroupAdmins) return client.reply(from, 'Perintah ini hanya bisa di gunakan oleh admin group', id)
+           			const groupMem = await client.getGroupMembers(groupId)
+            			let hehe = '╔══✪〘 Mention All 〙✪══\n'
+            			for (let i = 0; i < groupMem.length; i++) {
+                		hehe += '╠➥'
+               		        hehe += ` @${groupMem[i].id.replace(/@c.us/g, '')}\n`
+           			}
+            			hehe += '╚═〘 Shinomiya Kaguya BOT 〙'
+            			await client.sendTextWithMentions(from, hehe)
+            			break
 				case 'clearall':
 					if (!isOwner) return reply('𝙡𝙪 𝙨𝙞𝙖𝙥𝙖 ?')
 					anu = await client.chats.all()
